@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rockerito # Nombre del pod (cada uno elige lo que quiere)
+  namespace: rock # Nombre del namespace (cada uno elige el que quiere, debe coincidir con el nombre del archivo)
+  annotations:
+    student: "Juan Camilo Valencia" # Nombre del estudiante que crea el pod
+    student_code: "2259459" # Código del estudiante que crea el pod
+    music-preference: "rock" # Género musical preferido (cada uno elige el que quiere)
+spec:
+  containers:
+    - name: rockero # Nombre del contenedor (cada uno elige lo que quiere)
+      image: nginx
+  tolerations:
+    - key: "music"
+      operator: "Equal"
+      value: "guitarra-electrica" # Valor del taint (mirar en nodes/taints.yaml el valor del nodo con la música de su preferencia)
+      effect: "NoSchedule"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: style
+                operator: In
+                values:
+                  - metalero # Estilo musical del nodo (mirar en nodes/labels.yaml el estilo del nodo con la música de su preferencia)
