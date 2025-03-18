@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: rockerito # Nombre del pod (cada uno elige lo que quiere)
-  namespace: rock # Nombre del namespace (cada uno elige el que quiere, debe coincidir con el nombre del archivo)
+  namespace: rock # Nombre del namespace (Valores aceptados: techno, salsa, reggaeton, rock, pop)
   annotations:
     student: "Juan Camilo Valencia" # Nombre del estudiante que crea el pod
     student_code: "2259459" # Código del estudiante que crea el pod
@@ -14,7 +14,7 @@ spec:
   tolerations:
     - key: "music"
       operator: "Equal"
-      value: "guitarra-electrica" # Valor del taint (mirar el valor del nodo con la música de su preferencia)
+      value: "guitarra-electrica" # Valor del taint (Valores aceptados: perreo-intenso, guitarra-electrica, bass-boost, sabor-latino, pop)
       effect: "NoSchedule"
   affinity:
     nodeAffinity:
@@ -24,4 +24,4 @@ spec:
               - key: style
                 operator: In
                 values:
-                  - metalero # Estilo musical del nodo (mirar en nodes/labels.yaml el estilo del nodo con la música de su preferencia)
+                  - metalero # Estilo musical del nodo (Valores posibles: urbano, metalero, electronico, latino, pop)
