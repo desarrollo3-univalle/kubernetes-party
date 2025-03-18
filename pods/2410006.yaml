@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: Anime # Nombre del pod (cada uno elige lo que quiere)
+  name: anime # Nombre del pod (cada uno elige lo que quiere)
   namespace: pop # Nombre del namespace (Valores aceptados: techno, salsa, reggaeton, rock, pop)
   annotations:
     student: "Luis Carabali Rivera" # Nombre del estudiante que crea el pod
@@ -9,7 +9,7 @@ metadata:
     music-preference: "j-pop" # Género musical preferido (cada uno elige el que quiere)
 spec:
   containers:
-    - name: Anime # Nombre del contenedor (cada uno elige lo que quiere)
+    - name: anime # Nombre del contenedor (cada uno elige lo que quiere)
       image: nginx
   tolerations:
     - key: "music"
