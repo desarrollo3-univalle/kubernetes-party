@@ -14,7 +14,7 @@ spec:
   tolerations:
     - key: "music"
       operator: "Equal"
-      value: "guitarra-electrica" # Valor del taint (mirar en nodes/taints.yaml el valor del nodo con la música de su preferencia)
+      value: "guitarra-electrica" # Valor del taint (mirar el valor del nodo con la música de su preferencia)
       effect: "NoSchedule"
   affinity:
     nodeAffinity:
