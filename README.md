@@ -28,12 +28,14 @@ kubectl label node kind-worker style=urbano
 kubectl label node kind-worker2 style=metalero
 kubectl label node kind-worker3 style=electronico
 kubectl label node kind-worker4 style=latino
+kubectl label node kind-worker5 style=pop
 
 # Add taints
 kubectl taint node kind-worker music=perreo-intenso:NoSchedule
 kubectl taint node kind-worker2 music=guitarra-electrica:NoSchedule
 kubectl taint node kind-worker3 music=bass-boost:NoSchedule
 kubectl taint node kind-worker4 music=sabor-latino:NoSchedule
+kubectl taint node kind-worker5 music=pop:NoSchedule
 ```
 
 kubectl apply -f namespaces/
