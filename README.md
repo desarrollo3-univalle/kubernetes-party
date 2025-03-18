@@ -4,8 +4,8 @@ This repository contains the configuration files for the Kubernetes party. Each 
 
 ## Repository Structure
 
+- `kind-config.yaml`: Create a Kind cluster with a control plane and 4 nodes.
 - `namespaces/`: Contains YAML files for creating namespaces.
-- `nodes/`: Contains YAML files for node taints and labels.
 - `pods/`: Each team member has their own YAML file for their Pod.
 
 ## How to Contribute
