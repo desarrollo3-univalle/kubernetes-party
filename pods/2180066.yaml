@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: salsaelite # Nombre del pod (cada uno elige lo que quiere)
+  namespace: salsa # Nombre del namespace (Valores aceptados: techno, salsa, reggaeton, rock, pop)
+  annotations:
+    student: "Nicolas Garces Larrahondo" # Nombre del estudiante que crea el pod
+    student_code: "2180066" # Código del estudiante que crea el pod
+    music-preference: "salsa" # Género musical preferido (cada uno elige el que quiere)
+spec:
+  containers:
+    - name: salsax # Nombre del contenedor (cada uno elige lo que quiere)
+      image: nginx
+  tolerations:
+    - key: "music"
+      operator: "Equal"
+      value: "sabor-latino" # Valor del taint (Valores aceptados: perreo-intenso, guitarra-electrica, bass-boost, sabor-latino, pop)
+      effect: "NoSchedule"
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+              - key: style
+                operator: In
+                values:
+                  - latino # Estilo musical del nodo (Valores posibles: urbano, metalero, electronico, latino, pop)
